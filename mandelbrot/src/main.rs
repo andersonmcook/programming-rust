@@ -22,6 +22,6 @@ fn main() {
 
     let mut pixels = vec![0; bounds.0 * bounds.1];
 
-    renderer::render(&mut pixels, bounds, upper_left, lower_right);
+    renderer::parallel_render(&mut pixels, bounds, upper_left, lower_right);
     writer::write(&args[1], &pixels, bounds).expect("error writing PNG file");
 }
